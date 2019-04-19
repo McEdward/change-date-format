@@ -1,12 +1,14 @@
 from collections import defaultdict
 class RewardPoints:
+    counter = 0
     def  __init__(self):
         self.customers = defaultdict(int)
 
     def earn_points(self, customer_name, points):
         if points > 0:
-            if self.customers[customer_name] == 0:
+            if self.counter == 0:
                 self.customers[customer_name] += 500
+                self.counter += 1
             self.customers[customer_name] += points
 
     def spend_points(self, customer_name, points):
