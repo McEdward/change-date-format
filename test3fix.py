@@ -15,7 +15,6 @@ class MovingTotal:
                     x = sum(i)
                     self.t.append(x)
         b = total in self.t
-        print(self.t)
         self.t = []
         return b
 
@@ -26,5 +25,3 @@ print(movingtotal.contains(6))
 print(movingtotal.contains(9))
 movingtotal.append([4])
 print(movingtotal.contains(9))
-
-print(movingtotal.contains(7))
