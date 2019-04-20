@@ -15,10 +15,11 @@ class RewardPoints:
         if customer_name in self.customers.keys():
             if points > 0 and points <= self.customers[customer_name]:
                 self.customers[customer_name] -= points
-                return points
+                return self.customers[customer_name]
         else:
             return 0
 
 rewardPoints = RewardPoints()
 rewardPoints.earn_points("John", 520)
+rewardPoints.earn_points("John", 500)
 print(rewardPoints.spend_points("John", 200))
