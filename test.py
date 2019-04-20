@@ -15,8 +15,8 @@ def change_date_format(x):
                 res.append(ans)
             elif "-" in i and i.find("-") == 2 and i[5] == "-":
                 ans += i[6:]
-                ans += i[3:5]
                 ans += i[:2]
+                ans += i[3:5]
                 res.append(ans)
     return res
 
