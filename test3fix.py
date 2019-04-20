@@ -10,9 +10,12 @@ class MovingTotal:
     def contains(self, total):
         self.totals = set(itertools.combinations(self.numbers, 3))
         for i in self.totals:
-            x = sum(i)
-            self.t.append(x)
+            for j in range(0,len(self.numbers)-1):
+                if i[0] == self.numbers[j] and i[1] == self.numbers[j+1] and i[2] == self.numbers[j+2]:
+                    x = sum(i)
+                    self.t.append(x)
         b = total in self.t
+        print(self.t)
         self.t = []
         return b
 
@@ -24,6 +27,4 @@ print(movingtotal.contains(9))
 movingtotal.append([4])
 print(movingtotal.contains(9))
 
-print(movingtotal.contains(12))
-movingtotal.append([5,6])
-print(movingtotal.contains(12))
+print(movingtotal.contains(7))
